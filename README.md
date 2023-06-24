@@ -86,6 +86,38 @@ git clone https://github.com/bee10301/treeUI-docker-kernel-byBee.git
 - 先去設定 → 螢幕顯示 → 螢幕解析度，改成 720P，之後再改回 1080P
 - 螢幕縮放、字體大小樣式 改動成任意配置，再改到自己想要的即可
 
+## 相關介紹
+
+### Termux 配置
+
+建議安裝官方 [github 版](https://github.com/termux/termux-app/releases)的 或者 [ZeroTermux](https://github.com/hanxinhao000/ZeroTermux)。
+
+官方已經有整合好修改過的 docker 包了，建議先把 `Main repository`，`Game repository`，`Science repository` 切換到清華源，再安裝 root-repo 跟 docker。
+
+```bash title="切換源" showLineNumbers
+termux-change-repo
+```
+
+```bash title="更新資源" showLineNumbers
+pkg update
+```
+
+```bash title="安裝root跟docker包" showLineNumbers
+pkg install root-repo && pkg install docker
+```
+
+裝好了之後記得要執行 docker 才行
+
+```bash title="termux" showLineNumbers
+dockerd
+```
+
+### Termux 允許存取 android 空間
+
+```bash title="用來方便存取檔案" showLineNumbers
+termux-setup-storage
+```
+
 ## 額外推薦
 
 這邊推薦一個 termux 的分支 [ZeroTermux](https://github.com/hanxinhao000/ZeroTermux)，左滑選單多了很多便利的一鍵指令，還包含 2MOE Linux 導航的安裝指令，很適合剛入門的小白
