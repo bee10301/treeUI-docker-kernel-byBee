@@ -13,6 +13,35 @@
 [修改過的 kernel](https://github.com/bee10301/treeUI-docker-kernel-byBee/blob/main/kernel3.zip)
 
 
+### 核心版本：4.4.185_bee10301
+
+![](https://i.imgur.com/AkRKF58.png)
+
+### docker 需求檢查腳本
+
+```bash title="安裝wget" showLineNumbers
+pkg install wget
+```
+
+```bash title="下載檢查腳本" showLineNumbers
+wget https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh
+```
+
+```bash title="給權限" showLineNumbers
+chmod +x check-config.sh
+```
+
+```bash title="執行腳本資訊" showLineNumbers
+sed -i '1s_.*_#!/data/data/com.termux/files/usr/bin/bash_' check-config.sh
+```
+
+```bash title="執行腳本" showLineNumbers
+sudo ./check-config.sh
+```
+
+![](https://i.imgur.com/eS0asPg.png)
+
+
 ## 從 0 開始的刷機過程
 
 強烈建議準備記憶卡並把資源包內的必要檔案放入，本教學也是以記憶卡為主進行說明。本人所持有為 `sm-a530F` 進行實機測試，其他相近機種不保證可行。
